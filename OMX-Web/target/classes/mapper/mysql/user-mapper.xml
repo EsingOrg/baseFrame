@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >  
+<mapper namespace="com.smf.sys.domain.UserMapper"> 
+	 <cache type="org.mybatis.caches.ehcache.LoggingEhcache" readOnly="true"/> 
+	 <resultMap id="BaseResultMap" type="com.smf.sys.domain.vo.UserVo">  
+        <id column="esus_id" property="esusId" jdbcType="INTEGER" />  
+        <result column="esus_name_en" property="esusNameEn" jdbcType="VARCHAR" />  
+        <result column="esus_name_ch" property="esusNameCh" jdbcType="VARCHAR" />  
+        <result column="esus_password" property="esusPassword" jdbcType="VARCHAR" />  
+        <result column="esrl_id" property="esrlId" jdbcType="INTEGER" />  
+        <result column="creator" property="creator" jdbcType="VARCHAR" />  
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />  
+        <result column="modifier" property="modifier" jdbcType="VARCHAR" />  
+        <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+     	<result column="org_id" property="orgId" jdbcType="INTEGER" />
+     </resultMap> 
+     
+      <sql id="Base_Column_List">  
+        esus_id as esusId,  
+        esus_name_en as esusNameEn,  
+        esus_name_ch as esusNameCh,   
+        esus_password as esusPassword,   
+        esrl_id as esrlId,  
+        creator as creator,  
+        create_time as createTime,  
+        modifier as modifier,  
+        modify_time as modifyTime, 
+        org_id as orgId 
+    </sql>  
+      
+    <sql id="Base_Where_Clause">  
+        <where>  
+            <trim prefixOverrides="and">  
+                <if test="esusId != null"> and esus_id = #{esusId}</if>  
+                <if test="esusNameEn != null">and esus_name_en = #{esusNameEn}</if>  
+                <if test="esusNameCh != null">and esus_name_ch = #{esusNameCh}</if>  
+                <if test="esusPassword != null">and esus_password = #{esusPassword}</if>  
+                <if test="esrlId != null">and esrl_id = #{esrlId}</if>  
+                <if test="creator != null">and creator = #{creator}</if>  
+                <if test="modifier != null">and modifier = #{modifier}</if>  
+                <if test="createTime != null">and create_time = #{createTime}</if>  
+                <if test="modifyTime != null">and modify_time = #{modifyTime}</if>   
+                <!-- 模糊查询 -->  
+                <if test="esusNameEnLike != null">and esus_name_en like CONCAT("%",#{esusNameEnLike},"%")</if>  
+                <if test="esusNameChLike != null">and esus_name_ch like CONCAT("%",#{esusNameChLike},"%")</if>  
+            </trim>  
+        </where>  
+        <if test="sorting != null">order by ${sorting}</if>  
+        <if test="offset != null and limit != null">  
+            limit #{offset}, #{limit}  
+        </if>  
+    </sql>  
+    
+    
+      <select id="selectAll" resultMap="BaseResultMap">
+     	select 
+     	<include refid="Base_Column_List" />
+	     from es_user
+	  </select>
+       
+       
+        <select id="selectUserbyId" statementType="CALLABLE" resultMap="BaseResultMap" >
+	     	{call MSDB.sp_user_query(
+              #{id,mode=IN,jdbcType=INTEGER}
+           )}    
+	  </select>
+</mapper>
