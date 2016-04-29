@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.realpath>D:/myWorkSpace/OMX-Web</project.realpath>
     </properties>
-	<!--依赖Jar配置-->
+	<!--依赖Jar配置 teset-->
   <dependencies>
 		<dependency>
 		  <groupId>junit</groupId>
