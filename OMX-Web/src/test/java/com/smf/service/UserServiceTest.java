@@ -24,7 +24,7 @@ public class UserServiceTest extends AbstractJUnit4SpringContextTests{
 		
 		List<UserVo> vos= userService.selectAll();
 		for (int i = 0; i < vos.size(); i++) {
-			System.out.println("UserName:"+vos.get(i).getEsusNameCh());
+			//System.out.println("UserName:"+vos.get(i).getEsusNameCh());
 		}
 		
 	}
