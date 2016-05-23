@@ -64,7 +64,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcherServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>*.do</url-pattern>
         <!--拦截/*，这是一个错误的方式，请求可以走到Action中，但转到jsp时再次被拦截，不能访问到jsp.
             拦截/，restful风格 弊端：会导致静态文件（jpg,js,css）被拦截后不能正常显示。解决办法看dispatcher-->
     </servlet-mapping>
@@ -83,10 +83,15 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>  
-     
+       <!-- 配置JSP -->
+	 <jsp-config>  
+	    <jsp-property-group>  
+	      <url-pattern>*.jsp</url-pattern>  
+	      <include-prelude>/prelude.jspf</include-prelude>  
+	    </jsp-property-group>  
+	  </jsp-config>
      
   	<welcome-file-list>  
-        <welcome-file>index.jsp</welcome-file>  
+        <welcome-file>pages/home/login.jsp</welcome-file>  
     </welcome-file-list> 
- 
 </web-app>

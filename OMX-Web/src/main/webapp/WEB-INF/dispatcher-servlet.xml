@@ -40,7 +40,7 @@
      <!-- jsp视图解析器 -->  
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
         <property name="prefix" value="/" />  
-        <property name="suffix" value=".jsp" />  
+        <!-- <property name="suffix" value=".jsp" />   -->
     </bean>
     
      <!-- 扫描控制器类 -->  
