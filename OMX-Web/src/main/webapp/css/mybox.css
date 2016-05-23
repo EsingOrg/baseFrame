@@ -1,0 +1,31 @@
+
+/*
+.tbox_background {float:left;z-index:1000;top:0px;left:0px;width:100%;height:100%;filter:alpha(opacity=80);_moz-opacity:0.8;opacity:0.8;background-color:#999;}
+.tbox_background{position:fixed;display:block;height:1200px;}
+#tbox {position: absolute;top: 0;left: 0;text-align: left;z-index:1001;width:100%;}
+#tbox .popup {background:url(b.gif);margin:0 auto;}
+#tbox .loading {text-align: center;background:url(loading.gif) no-repeat;}
+#tbox .body {position: relative;background:#fff;border:1px solid #aaa;margin:8px;}
+
+
+#tbox .content {background:#fff;padding:0px;width:100%;}
+*/
+
+.tbox_background {float:left;z-index:1000;top:0px;left:0px;width:100%;height:100%;filter:alpha(opacity=0);_moz-opacity:0;opacity:0;}
+ .tbox_background{position:fixed;display:block;height:100%;}
+ #tbox {position: absolute;top: 0;left: 0;text-align: left;z-index:1001;width:100%;}
+#tbox .popup {background:url(b.gif);margin:0 auto;}
+#tbox .body {position: relative;}
+
+
+#tbox .content {background:#fff;padding:0px;width:100%;}
+
+/*
+分页组件样式
+*/
+.page_font{color:#666; font-family:\"微软雅黑\";}
+.pagebox{margin-left:2px;padding:3px 5px 3px 5px; border:1px solid #fff; background-color:#ebebeb;color:rbg(51,125,182); font-size:12px;}
+.cpagebox{margin-left:2px;padding:3px 5px 3px 5px; border:1px gray; background-color:#ebebeb; color:red; font-size:12px;}
+.vpagebox{margin-left:2px;padding:3px 5px 3px 5px; background-color:#FFFFFF; color:#000000;font-size:12px;}
+.page_btn{min-width:45px; padding:0 10px; height:22px; line-height:20px; background:#ffc800; border-radius:5px; font-size:16px;vertical-align:middle; border:0; font-family:"微软雅黑";}
+.page_btn:hover{background:#ffd322;}
