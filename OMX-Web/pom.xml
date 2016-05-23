@@ -141,6 +141,16 @@
 			<artifactId>spring-data-rest-webmvc</artifactId>  
 			<version>2.4.4.RELEASE</version>  
 		</dependency> 
+		<dependency>
+  		<groupId>javax.servlet.jsp.jstl</groupId>
+  		<artifactId>javax.servlet.jsp.jstl-api</artifactId>
+  		<version>1.2.1</version>
+	 	</dependency>
+	 	<dependency>
+	 		<groupId>taglibs</groupId>
+	 		<artifactId>standard</artifactId>
+	 		<version>1.1.2</version>
+	 	</dependency>
   </dependencies>
   <build>
     <finalName>omx-web</finalName>
